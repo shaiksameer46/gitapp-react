@@ -9,21 +9,20 @@ import Repo from './Repo';
 class App extends Component {
 
   state = {
-    ownername : "",
+    reponame : "",
     repos : []
   };
  
   handleSubmit = async event => {
     event.preventDefault();
-    const query = this.state.ownername;
+    const query = this.state.reponame;
     const { data: repos } = await axios.get('https://api.github.com/legacy/repos/search/'+query);
     this.setState({ repos : repos.repositories });
-    //console.log(this.state.repos[0].owner);
-    this.setState({ ownername: ""});
+    this.setState({ reponame: ""});
   };
 
   handleChange = event => {
-    this.setState({ ownername: event.target.value });
+    this.setState({ reponame: event.target.value });
   };
   
 
@@ -38,7 +37,7 @@ class App extends Component {
       id="search" 
       type="text" 
       autoComplete="off"
-      value = {this.state.ownername}
+      value = {this.state.reponame}
       onChange = {this.handleChange}
       placeholder="Enter git repository name"
       />     
