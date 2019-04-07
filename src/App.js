@@ -39,15 +39,15 @@ class App extends Component {
       type="text" 
       value = {this.state.ownername}
       onChange = {this.handleChange}
-      placeholder="Enter git repository search"
+      placeholder="Enter git repository name"
       />     
       </div>
       <button type="submit" className="btn btn-primary mb-2">
        search
       </button>
       </form>
-      
-
+  
+    
   <div className="panel panel-default panelstyle">
        <div className="panel-heading">
        <h2>List of repositories with given search</h2>
@@ -69,7 +69,7 @@ class App extends Component {
       </tbody>
       </table>
    </div>
-      
+
       <div id="overlay-container">
       <Switch>
         <Route path="/:reponame/:ownername" 
