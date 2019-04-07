@@ -37,6 +37,7 @@ class App extends Component {
       className="form-control mt-3"
       id="search" 
       type="text" 
+      autoComplete="off"
       value = {this.state.ownername}
       onChange = {this.handleChange}
       placeholder="Enter git repository name"
